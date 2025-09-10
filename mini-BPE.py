@@ -8,7 +8,7 @@ corpus = ["low", "low", "low", "low", "low",
           "wider", "wider", "wider",
           "new", "new"]
 
-# 1️⃣ Preprocess: add end-of-word marker '_' and split into chars
+# 1️Preprocess: add end-of-word marker '_' and split into chars
 corpus_chars = [' '.join(list(word) + ['_']) for word in corpus]
 
 def get_stats(corpus_list):
@@ -44,7 +44,7 @@ for step in range(num_merges):
 print("\nFinal corpus with subwords:")
 print(corpus_chars)
 
-# 2️⃣ Segment specific words
+# 2️ Segment specific words
 def segment_word(word, merges):
     # Start with chars + _
     chars = list(word) + ['_']
@@ -57,7 +57,7 @@ def segment_word(word, merges):
         word_seq = word_seq_str.split()
     return word_seq
 
-# List of merges from BPE
+# 3 List of merges from BPE
 corpus_temp = [' '.join(list(w)+['_']) for w in corpus]
 merges_list = []
 for step in range(num_merges):
